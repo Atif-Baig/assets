@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Draughts</title>
+<meta name="description" content="Privacy policy for the Draughts app. The app collects no personal information and does not use the internet.">
+<meta name="robots" content="index, follow">
+
+<!--
+  Deliberately self-contained: no web fonts, no stylesheets, no scripts, no
+  analytics, no CDN. A privacy policy that makes third-party requests in order
+  to tell you it makes no third-party requests is not one worth reading. Save
+  this file anywhere and it works, offline, forever.
+
+  Colours and the board motif are taken from the app itself, so someone
+  arriving from the Play listing recognises where they have landed.
+-->
+
+<style>
+  :root {
+    --bg:        #1C1713;  /* app background — warm near-black */
+    --surface:   #2A231D;
+    --ink:       #F3EDE2;
+    --ink-muted: #B2A493;
+    --accent:    #3D8B6E;  /* the app's selection green */
+    --crown:     #E0B457;  /* the king marker */
+    --board-dk:  #9A6B45;
+    --board-lt:  #E8D3B0;
+    --rule:      #3A302700;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    /* System stacks only. Nothing to download, nothing to request. */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* ---- masthead ---------------------------------------------------------
+     The board strip is the one decorative element on the page, and it is real:
+     eight alternating squares, the same two colours as the app's board. */
+  .board-strip {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 6px;
+    margin: 0 -1.5rem;
+  }
+  .board-strip i:nth-child(odd)  { background: var(--board-dk); }
+  .board-strip i:nth-child(even) { background: var(--board-lt); }
+
+  header { padding: 3.5rem 0 2.5rem; }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 0.75rem;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
+                 "Times New Roman", serif;
+    font-size: clamp(2.1rem, 6vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.75rem;
+  }
+
+  .dates { color: var(--ink-muted); font-size: 0.95rem; margin: 0; }
+
+  /* ---- the answer, up front --------------------------------------------
+     Most people opening a privacy policy want one fact. Putting it in a panel
+     above everything else is the honest layout when the answer is "nothing". */
+  .headline-answer {
+    background: var(--surface);
+    border: 1px solid rgba(61, 139, 110, 0.4);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 0 0 3rem;
+  }
+  .headline-answer p {
+    margin: 0;
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+  .headline-answer .sub {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    margin-top: 0.6rem;
+  }
+
+  h2 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 3rem 0 0.85rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(243, 237, 226, 0.12);
+  }
+
+  /* Section markers are draughts pieces rather than numbers: the sections are
+     not a sequence, so numbering them would imply an order that is not there. */
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    margin-right: 0.55em;
+    border-radius: 50%;
+    background: var(--board-lt);
+    border: 1.5px solid var(--board-dk);
+    vertical-align: 0.04em;
+  }
+
+  p { margin: 0 0 1rem; }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+  li { margin-bottom: 0.5rem; }
+  li::marker { color: var(--crown); }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--crown); }
+  a:focus-visible {
+    outline: 2px solid var(--crown);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .muted { color: var(--ink-muted); }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(243, 237, 226, 0.12);
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+  }
+  .contact p { margin: 0 0 0.25rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a { transition: color 120ms ease; }
+  }
+
+  /* Printing a privacy policy is a real thing people do. */
+  @media print {
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .board-strip { display: none; }
+    .headline-answer, .contact { background: #f4f4f4; border-color: #999; }
+    h2 { border-color: #ccc; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+
+<div class="board-strip" aria-hidden="true">
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Draughts for Android</p>
+    <h1>Privacy Policy</h1>
+    <p class="dates">Effective [DATE] &middot; Last updated [DATE]</p>
+  </header>
+
+  <div class="headline-answer">
+    <p>This app collects nothing about you.</p>
+    <p class="sub">No account, no sign-in, no internet connection, no
+      advertising, no analytics. The rest of this page explains that in
+      detail.</p>
+  </div>
+
+  <h2>What we collect</h2>
+  <p><strong>Nothing.</strong> Draughts is a single-player board game that runs
+    entirely on your device. There is no account and no sign-in, and the app has
+    no way to identify you.</p>
+
+  <h2>Internet access</h2>
+  <p><strong>The app does not use the internet.</strong> It contains no
+    networking code and requests no internet permission from Android. Nothing
+    you do in the app is transmitted anywhere, because there is nowhere for it
+    to be sent.</p>
+
+  <h2>What is stored on your device</h2>
+  <p>One thing: <strong>your campaign progress</strong> &mdash; which rounds you
+    have beaten and how many stars you earned.</p>
+  <p>It is kept in a private file inside the app's own storage, which no other
+    app can read. It contains no identifier and nothing about you, and it is
+    never transmitted anywhere. Uninstalling the app deletes it, and you can
+    clear it at any time with <strong>Reset progress</strong> on the main
+    screen.</p>
+  <p class="muted">Nothing else is saved. Games in progress are held in memory
+    and are gone when the app closes.</p>
+
+  <h2>Advertising and analytics</h2>
+  <p>There are none. The app contains no advertising networks, no analytics
+    services, and no tracking or attribution software of any kind. It has no
+    third-party libraries beyond the Flutter framework it is built with and a
+    single Android component for saving your progress.</p>
+
+  <h2>Permissions</h2>
+  <p>The app requests <strong>no permissions at all</strong> &mdash; not
+    storage, not location, not the camera, not contacts, not the network.</p>
+
+  <h2>What Google collects</h2>
+  <p>The app is distributed through Google Play. Google may collect
+    installation and crash information under its own policies, which we do not
+    control and cannot see beyond aggregate reports. See
+    <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+  <h2>Children</h2>
+  <p>The app is suitable for all ages, and collects nothing from anyone of any
+    age.</p>
+
+  <h2>Your rights</h2>
+  <p>Rights of access, correction and deletion apply to personal information
+    that an organisation holds about you. We hold none, so there is nothing to
+    request, correct or delete. If you would like your campaign progress gone,
+    uninstalling the app or tapping <strong>Reset progress</strong> removes it
+    completely.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>Any change will be posted on this page with an updated date above.</p>
+
+  <h2>Contact</h2>
+  <div class="contact">
+    <p><strong>[YOUR NAME]</strong></p>
+    <p><a href="mailto:[CONTACT EMAIL]">[CONTACT EMAIL]</a></p>
+  </div>
+
+  <footer>
+    <p>This page loads no fonts, no stylesheets, no scripts and no analytics
+      from anywhere. Opening it makes no request to any third party.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
